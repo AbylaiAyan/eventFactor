@@ -1,0 +1,585 @@
+body {
+  padding: 0;
+  margin:  0;
+  /* background-color: #1E90FF	; */
+}
+
+*{
+  transition: 0.3s;
+}
+
+/*------------------ navigation part ------------------------------*/
+.nav__main {
+  /* background-color: #1A202C; */
+  display: grid;
+  grid-template-columns: 135px auto 17%;
+  height: 70px;
+}
+
+.nav__main_title {
+  padding: 10px;
+  /* background-color: #F6E05E; */
+  background-color: #1A202C;
+  color: #E5E5E5;
+  border: 1px solid #1A202C;
+  border-radius: 10px 0 0 0px;
+}
+
+.nav__main_title_up {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: -7px;
+}
+
+#fontRibeye {
+  font-family: 'Ribeye';
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+}
+
+.nav__main_title_down {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+
+.nav__main_links {
+  color: #E5E5E5;
+  background-color: #1A202C;
+
+}
+
+.nav__main_links_el {
+  margin: 0;
+  /* padding: 0; */
+}
+
+.nav__main_links_el > ul {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  list-style-type: none;
+  text-align: center;
+}
+
+.nav__main_links_el > ul >li {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 150%;  /* 24px */
+  line-height: 116%;
+  padding: 7% 10%;
+  position: relative;
+
+  /* margin: 0 20%; */
+}
+
+.nav__main_buttons {
+  background-color: #1A202C;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 0 10px 0px 0;
+}
+
+.nav__main_buttons_3line {
+  height: 35px;
+  margin-right: 8%;
+  margin-left: 8%;
+  position: relative;
+}
+
+#white {
+  filter: grayscale(1) brightness(1000%) invert(1);
+}
+
+.nav__main_buttons_signIn {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#SignInB {
+  /* background-color: white; */
+  font-family: 'Roboto' sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  border-radius: 8px;
+  border: 1px solid white;
+  padding: 5px 15px;
+}
+
+.navLinks {
+  text-decoration: none;
+  color: #E5E5E5;
+}
+
+#navTitleLink {
+  text-decoration: none;
+  color: #E5E5E5;
+}
+
+
+/* ================== transition hover =================== */
+    .nav__main_links_el > ul > li::before {
+      position: absolute;
+      content: "";
+      border-top: 3px solid white;
+      width: 50px;
+      height: 2px;
+      /* background-color: black; */
+      top: 10px;
+      left: 0;
+      transition: 1s;
+      opacity: 0;
+    }
+
+    .nav__main_links_el > ul > li::after {
+      position: absolute;
+      content: "";
+      border-bottom: 3px solid white;
+      right: 0;
+      bottom: 10px;
+      width: 50px;
+      height: 2px;
+      /* background-color: black; */
+      transition: 1s;
+      opacity: 0;
+    }
+
+    .nav__main_links_el > ul > li:hover:after {
+      right:50%;
+      opacity: 1;
+    }
+
+    .nav__main_links_el > ul > li:hover:before {
+      left: 50%;
+      opacity: 1;
+    }
+
+    #activeS::before {
+      position: absolute;
+      content: "";
+      border-top: 3px solid white;
+      border-left: 3px solid white;
+      width: 70px;
+      height: 20px;
+      /* background-color: white; */
+      top: 10px;
+      left: 50px;
+      transition: 1s;
+      opacity: 1;
+    }
+
+    #activeS::after {
+      position: absolute;
+      content: "";
+      border-bottom: 3px solid white;
+      border-right: 3px solid white;
+      right: 50px;
+      bottom: 10px;
+      width: 70px;
+      height: 20px;
+      /* background-color: black; */
+      transition: 1s;
+      opacity: 1;
+    }
+
+
+/* -------------------main------------------------ */
+.main {
+  margin: 0 10%;
+  padding: 0;
+}
+
+.main__calendar {
+  /* margin-top: 20px; */
+  border: 20px solid #E5E5E5;
+  border-radius: 0 0 10px 10px;
+  padding: 3.5%;
+  background-color: white;
+}
+
+.main__calendar_title {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.th {
+  width: 160px;
+  height: 24px;
+  font-size: 14px;
+  border: 0px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+td {
+  min-width: 150px;
+  height: 120px;
+  border: 1px dashed #E0E0E0;
+}
+
+#monday {
+  text-align: left;
+}
+
+#tuesday {
+  padding-left: 10px;
+}
+
+#wednesday {
+  padding-left: 25px
+}
+
+#thursday {
+  padding-left: 40px;
+}
+
+#friday {
+  padding-left: 65px;
+}
+
+#saturday {
+  padding-left: 75px;
+}
+
+#sunday {
+  padding-left: 85px;
+}
+/* =================hover and after to show text================== */
+#monday::after {
+  content: "onday";
+  display: none;
+}
+
+#tuesday::after {
+  content: "uesday";
+  display: none;
+}
+
+#wednesday::after {
+  content: "ednesday";
+  display: none;
+}
+
+#thursday::after {
+  content: "hursday";
+  display: none;
+}
+
+#friday::after {
+  content: "riday";
+  display: none;
+}
+
+#saturday::after {
+  content: "aturday";
+  display: none;
+}
+
+#sunday::after {
+  content: "unday";
+  display: none;
+}
+
+#monday:hover::after, #tuesday:hover::after, #wednesday:hover::after,
+#thursday:hover::after, #friday:hover::after, #saturday:hover::after,
+#sunday:hover::after {
+  display: inline;
+}
+
+
+
+/* ====================second calendar============================*/
+/* *{
+    box-sizing: border-box;
+} */
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+/* месяцы и годы */
+#month-calendar{
+    margin: 0 10%;
+    /* width: 100%; */
+}
+
+.month{
+    margin: 0;
+    padding: 1rem 2rem 1rem;
+    /* background: #555555; */
+    background-color: white;
+    text-align: center;
+    /* width: 100%; */
+    color: #ffffff;
+    list-style: none;
+}
+
+.month li{
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.month li.prev,
+.month li.next{
+    cursor: pointer;
+    color: black;
+}
+
+.month li.prev{
+    float: left;
+    margin-top: 20px;
+}
+
+.month li.next{
+    float: right;
+    margin-top: 20px;
+
+}
+
+.month li.prev:hover,
+.month li.next:hover {
+  background-color: #b9b9b9;
+  border-radius: 5px;
+}
+
+.month li.month-name{
+    font-size: 1.8rem;
+    line-height: 1.5  ;
+    color: black;
+
+    /* font-weight: 400; */
+}
+
+.month li.year-name{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: black;
+
+}
+
+/* дни недели */
+.weekdays{
+    margin: 0 ;
+    padding: 0rem 40px;
+    /* background-color: #dddddd; */
+    background-color: white;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+}
+
+.weekdays li:hover {
+  background-color: #F1F1F1;
+  border-radius: 5px;
+  /* border: 0.5px solid black; */
+  box-shadow: inset 4px 0.5em 0.5em #E3E3E3;
+}
+
+.weekdays li{
+    font-size: 18px;
+    display: inline-block;
+    /* width: 135px; */
+    /* flex: 0 0 calc(1009px / 7); */
+    flex: 0 0 12.86%;
+    text-align: left;
+    padding: 1rem 0.5rem 0 ;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
+    /* border: 1px solid black; */
+
+}
+
+/* дни */
+.days{
+    margin: 0;
+    padding: 0rem 40px;
+    /* background-color: #eeeeee; */
+    /* width: 100%; */
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-content: flex-start;
+    /* height: 58rem; */
+    /* max-height: 58rem; */
+    padding-bottom: 50px;
+}
+
+.days li{
+    padding:1rem 0.5rem ;
+    list-style: none;
+    display: inline-block;
+    /* flex: 0 0 calc(1009px / 7); */
+    flex: 0 0 12.69%;
+    text-align: left;
+    color: #999;
+    font-size: 1rem;
+    line-height: 1rem;
+    border: 1px dashed  black;
+    height: 120px;
+    position: relative;
+}
+
+
+.add {
+  font-size: 14px;
+  position: absolute;
+  border: 0;
+  right: 10px;
+  border-radius: 50%;
+  background-color: #FFD200;
+  opacity: 0.5;
+    transition: 0.9s;
+}
+
+.add:hover {
+  border: 1px solid black;
+  opacity: 1;
+}
+
+
+.days li:hover {
+  box-shadow: inset 4px 0.5em 0.5em #E3E3E3;
+}
+
+.days li.date-now{
+    color: #000;
+    font-weight: 700;
+    background-color: #F1F1F1	;
+    box-shadow: inset 4px 0.5em 0.5em #E3E3E3;
+}
+
+/* ================================================== */
+
+.openB {
+  background-color: #1A202C;
+  border:0;
+padding: 0;
+}
+
+.openDivLogOut {
+  padding: 5px 0px;
+  border: 2px solid #1A202C;
+  /* background-color: white; */
+  margin-top: 20px;
+  margin-left: -5px;
+  position: absolute;
+  width: 130px;
+  border-radius: 5px;
+  display: none;
+}
+
+.openDivLogOut > button {
+  background-color: #1A202C;
+  position: relative;
+  padding: 15px;
+}
+
+.openDivLogOut > button > a{
+  text-decoration: none;
+  /* background-color: white; */
+  padding: 5px 15px;
+  border-radius: 5px;
+  color : white;
+  /* color: #1A202C; */
+  background-color: #1A202C;
+  /* background-color: white; */
+}
+
+.openDivLogOut>button::before {
+  content: '';
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #1A202C;
+  /* border-bottom: 10px solid white; */
+  left: 3px;
+  top:-27px;
+}
+
+.openDivLogOut>button::after {
+  content: '';
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom: 10px solid white;
+  left: 3px;
+  top:-25px;
+}
+
+#toopen {
+  cursor: pointer;
+}
+
+.nav__main_buttons_iconIn {
+    overflow: hidden;
+    margin-right: 40px;
+    margin-left: 20px;
+    /* margin-left: 30%; */
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* overflow: hidden; */
+    /* margin-bottom: 20px; */
+}
+
+.nav__main_buttons_iconIn > img {
+  width: 50px;
+  height: 50px;
+}
+
+
+/* .date-now_Add {
+  background-color: red;
+} */
+
+
+/* =============================== */
+
+/* .animation{
+  position: relative;
+  transform: translate(0px, 180px);
+  opacity: 0;
+  transition: all 0.7s;
+}
+.animation.active{
+  transform: translate(0px, 0px);
+  opacity: 1;
+} */

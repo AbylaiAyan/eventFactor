@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/bubbles/100/000000/apple-camera.png" />
+    <!-- heebo for title icon in nav  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- heebo for title icon in nav  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@200&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style/infoComstyle.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav__main">
+        <div class="nav__main_title">
+          <a id="navTitleLink" href="main2.php">
+            <div class="nav__main_title_up">
+              Event<span id="fontRibeye"></span>
+            </div>
+            <div class="nav__main_title_down">
+              production
+            </div>
+          </a>
+        </div>
+        <div class="nav__main_links">
+          <div class="nav__main_links_el">
+            <ul>
+              <li><a class="navLinks" href="calendar.php">Map</a></li>
+              <li><a class="navLinks" href="allEvents.php">List</a></li>
+              <li id="activeS"><a class="navLinks" href="infoCom.php">Additional</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav__main_buttons">
+          <div class="nav__main_buttons_3line">
+            <button id="toopen" onclick="open1()" type="button" name="button" class="openB">
+              <img id="white" src="https://img.icons8.com/ios-glyphs/35/000000/menu-rounded.png"/>
+            </button>
+            <div id="toopenDiv" class="openDivLogOut">
+              <button id="SignInB" type="button" name="button"><a href="vendor/logout.php">Log out</a></button>
+            </div>
+          </div>
+          <div class="nav__main_buttons_iconIn">
+            <!-- Место для иконки сотрудника -->
+            <img src="<?= $_SESSION['employees']['avatar'] ?>" alt="">
+
+            <!-- <img src="https://profile-images.xing.com/images/fcbbc1d50bc8aaa1d1f711a0428d92c2-1/sven-gessert.1024x1024.jpg" alt=""> -->
+            <!-- <button id="SignInB" type="button" name="button"><a href="main1.html">Log out</a></button> -->
+          </div>
+        </div>
+      </div>
+      <div class="main_after_nav">
+        <div class="main_after_nav_text">
+
+           Here you can find additional information about the services that may be useful to you
+        </div>
+        <div class="photo">
+          <!-- <img id="photo1" src="photo/girl1.png" alt=""> -->
+          <img id="photo2" src="photo/man2.png" alt="">
+        </div>
+      </div>
+      <div class="main_employee">
+          <div class="opened_divs_additional">
+            <div class="">
+              <details>
+                <summary>
+                  Presenters
+                </summary>
+                <div class="presenters_div">
+                  <div class="presenters_section_one">
+                    <div class="main_employee_section">
+                      <div class="main_employee_section_card">
+                        Kazakh presenter
+                      </div>
+                      <div class="main_employee_section_line">
+                      </div>
+                      <div class="main_employee_section_photo"><img src="<?= $info[5] ?>" alt=""></div>
+                      <div class="main_employee_section_fio"><?= $info[1] ?></div>
+                      <div class="main_employee_section_position"><?= $info[4] ?></div>
+                      <div class="main_employee_section_number"><?= $info[2] ?></div>
+                      <div class="main_employee_section_email"></div>
+                      <div  class="main_employee_section_dateOfBirth">
+                        Date of birth:<br>
+                        <?= $info[6] ?>
+                      </div>
+                      <div  class="main_employee_section_adressOfResidence">
+                        Address of residence:<br>
+                        <?= $info[7] ?>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="presenters_section_one">
+                    <div class="main_employee_section">
+                      <div class="main_employee_section_card">
+                        Presenter
+                      </div>
+                      <div class="main_employee_section_line">
+                      </div>
+                      <div class="main_employee_section_photo"><img src="<?= $info[5] ?>" alt=""></div>
+                      <div class="main_employee_section_fio"><?= $info[1] ?></div>
+                      <div class="main_employee_section_position"><?= $info[4] ?></div>
+                      <div class="main_employee_section_number"><?= $info[2] ?></div>
+                      <div class="main_employee_section_email"></div>
+                      <div  class="main_employee_section_dateOfBirth">
+                        Date of birth:<br>
+                        <?= $info[6] ?>
+                      </div>
+                      <div  class="main_employee_section_adressOfResidence">
+                        Address of residence:<br>
+                        <?= $info[7] ?>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="presenters_section_one">
+                    <div class="main_employee_section">
+                      <div class="main_employee_section_card">
+                        Presenter
+                      </div>
+                      <div class="main_employee_section_line">
+                      </div>
+                      <div class="main_employee_section_photo"><img src="<?= $info[5] ?>" alt=""></div>
+                      <div class="main_employee_section_fio"><?= $info[1] ?></div>
+                      <div class="main_employee_section_position"><?= $info[4] ?></div>
+                      <div class="main_employee_section_number"><?= $info[2] ?></div>
+                      <div class="main_employee_section_email"></div>
+                      <div  class="main_employee_section_dateOfBirth">
+                        Date of birth:<br>
+                        <?= $info[6] ?>
+                      </div>
+                      <div  class="main_employee_section_adressOfResidence">
+                        Address of residence:<br>
+                        <?= $info[7] ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="">
+            <div class="">
+              <details open>
+                <summary>
+                  Decoration
+                </summary>
+                <div class="decoration_div">
+                  <div class="presenters_section_one">
+                    <div class="main_employee_section">
+                      <div class="main_employee_section_card">
+                        Studio balloo
+                      </div>
+                      <div class="main_employee_section_line">
+                      </div>
+                      <div class="decortext">
+                        For any important holiday, personal or corporate, we are used to arrange a solemn event. In order for the event to be remembered by everyone present, we recommend taking care of such organizational aspects as the selection of a hall suitable in size and specifics, ordering decorative decoration of the event, organizing a show program and festive treats for guests.
+                      </div>
+                      <div class="">
+                        <img class="phtoDec" src="photo/One.PNG" alt="">
+                      </div>
+                      <div class="main_employee_section_photo"><img src="<?= $info[5] ?>" alt=""></div>
+                      <div class="main_employee_section_fio"><?= $info[1] ?></div>
+                      <div class="main_employee_section_position"><?= $info[4] ?></div>
+                      <div class="main_employee_section_number"><?= $info[2] ?></div>
+                      <div class="main_employee_section_email"></div>
+                      <div  class="main_employee_section_dateOfBirth">
+                        Average price:<br>
+                        <?= $info[6] ?>
+                      </div>
+                      <div  class="main_employee_section_adressOfResidence">
+                        Address of residence:<br>
+                        <?= $info[7] ?>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="presenters_section_one">
+                    <div class="main_employee_section">
+                      <div class="main_employee_section_card">
+                        Studio balloo
+                      </div>
+                      <div class="main_employee_section_line">
+                      </div>
+                      <div class="decortext">
+                        For any important holiday, personal or corporate, we are used to arrange a solemn event. In order for the event to be remembered by everyone present, we recommend taking care of such organizational aspects as the selection of a hall suitable in size and specifics, ordering decorative decoration of the event, organizing a show program and festive treats for guests.
+                      </div>
+                      <div class="">
+                        <img class="phtoDec" src="photo/One.PNG" alt="">
+                      </div>
+                      <div class="main_employee_section_photo"><img src="<?= $info[5] ?>" alt=""></div>
+                      <div class="main_employee_section_fio"><?= $info[1] ?></div>
+                      <div class="main_employee_section_position"><?= $info[4] ?></div>
+                      <div class="main_employee_section_number"><?= $info[2] ?></div>
+                      <div class="main_employee_section_email"></div>
+                      <div  class="main_employee_section_dateOfBirth">
+                        Average price:<br>
+                        <?= $info[6] ?>
+                      </div>
+                      <div  class="main_employee_section_adressOfResidence">
+                        Address of residence:<br>
+                        <?= $info[7] ?>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="presenters_section_one">
+                    <div class="main_employee_section">
+                      <div class="main_employee_section_card">
+                        Studio balloo
+                      </div>
+                      <div class="main_employee_section_line">
+                      </div>
+                      <div class="decortext">
+                        For any important holiday, personal or corporate, we are used to arrange a solemn event. In order for the event to be remembered by everyone present, we recommend taking care of such organizational aspects as the selection of a hall suitable in size and specifics, ordering decorative decoration of the event, organizing a show program and festive treats for guests.
+                      </div>
+                      <div class="">
+                        <img class="phtoDec" src="photo/One.PNG" alt="">
+                      </div>
+                      <div class="main_employee_section_photo"><img src="<?= $info[5] ?>" alt=""></div>
+                      <div class="main_employee_section_fio"><?= $info[1] ?></div>
+                      <div class="main_employee_section_position"><?= $info[4] ?></div>
+                      <div class="main_employee_section_number"><?= $info[2] ?></div>
+                      <div class="main_employee_section_email"></div>
+                      <div  class="main_employee_section_dateOfBirth">
+                        Average price:<br>
+                        <?= $info[6] ?>
+                      </div>
+                      <div  class="main_employee_section_adressOfResidence">
+                        Address of residence:<br>
+                        <?= $info[7] ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- <?php
+            $info = mysqli_query($mysqli, query: "SELECT * FROM `aboutemp`");
+            $info = mysqli_fetch_all($info);
+            foreach ($info as $info) {
+              ?>
+              <div class="main_employee_section">
+                <div class="main_employee_section_card">
+                  Employee Card
+                </div>
+                <div class="main_employee_section_line">
+                </div>
+                <div class="main_employee_section_photo"><img src="<?= $info[5] ?>" alt=""></div>
+                <div class="main_employee_section_fio"><?= $info[1] ?></div>
+                <div class="main_employee_section_position"><?= $info[4] ?></div>
+                <div class="main_employee_section_number"><?= $info[2] ?></div>
+                <div class="main_employee_section_email"></div>
+                <div  class="main_employee_section_dateOfBirth">
+                  Date of birth:<br>
+                  <?= $info[6] ?>
+                </div>
+                <div  class="main_employee_section_adressOfResidence">
+                  Address of residence:<br>
+                  <?= $info[7] ?>
+                </div>
+
+              </div>
+
+          <?php
+          }
+          ?>
+
+      </div> -->
+    </div>
+    <script src="javaScript/infoComJS.js"></script>
+    <script src="https://kit.fontawesome.com/e080e84936.js" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!-- https://profile-images.xing.com/images/fcbbc1d50bc8aaa1d1f711a0428d92c2-1/sven-gessert.1024x1024.jpg -->

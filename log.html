@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/bubbles/100/000000/apple-camera.png" />
+    <!-- heebo for title icon in nav  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/logstyle.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+    <title></title>
+  </head>
+  <body>
+    <div class="" id="main">
+
+      <div class="nav__main_title">
+        <a id="navTitleLink" href="main1.php">
+          <div class="nav__main_title_up">
+            Mark-<span id="fontRibeye">II</span>
+            production
+          </div>
+          <!-- <div class="nav__main_title_down">
+          </div> -->
+        </a>
+      </div>
+
+      <!-- all -->
+      <div class="partRegister">
+        <div class="requiredCaution" id="vError">
+          <div class="requiredCaution-section">
+            <div class="requiredCaution__icon">
+              <img src="https://img.icons8.com/ios/20/000000/error--v1.png"/>
+            </div>
+            <div class="requiredCaution_text">
+              <p>We couldn’t sign you in. Check your email address and password, then try again.</p>
+            </div>
+          </div>
+          <div class="tri"> </div>
+        </div>
+        <div class="register"> <!-- links 2 -->
+          <div class="toregister"> <!-- Register -->
+            Login
+          </div>
+        </div>
+
+
+        <form class="form" action = "vendor/signin.php" method = "post" enctype="multipart/form-data">
+          <div class="inForm">
+            <div class=" formval">
+              <label class="inForm__labelText" for="login">Login *</label>
+              <input id="fname" class="inForm__input firstName" type="text" name="login" placeholder="Employee login" required>
+            </div>
+            <div class=" formval">
+              <label class="inForm__labelText" for="password">Choose a password *</label>
+              <input id="pw" class="inForm__input password" type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <div class="inForm__register-button">
+              <button class="inform__button" type="submit"  name="button"> <span class="inform__buttonSpan">Login</span></button>
+
+            </div>
+
+            <?php
+            if (isset($_SESSION['message'])) {
+              if ($_SESSION['message']) {
+                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+            }
+            unset($_SESSION['message']);
+            }
+            ?>
+
+
+            <!-- onclick="store()" -->
+            <!-- button -->
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- <script src="javaScript/jquery-3.4.1.min.js"></script>
+    <script src="javaScript/validation.js"></script> -->
+
+  </body>
+</html>

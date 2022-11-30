@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/bubbles/100/000000/apple-camera.png" />
+    <!-- heebo for title icon in nav  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/summernote/summernote-bs4.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="admin-panel/funda-service/admin/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="style/allEventsstyle.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav__main">
+        <div class="nav__main_title">
+          <a id="navTitleLink" href="main2.php">
+            <div class="nav__main_title_up">
+              Event<span id="fontRibeye"></span>
+            </div>
+            <div class="nav__main_title_down">
+              production
+            </div>
+          </a>
+        </div>
+        <div class="nav__main_links">
+          <div class="nav__main_links_el">
+            <ul>
+              <li><a class="navLinks" href="calendar.php">Map</a></li>
+              <li id="activeS"><a class="navLinks" href="allEvents.php">List</a></li>
+              <li><a class="navLinks" href="infoCom.php">Additional</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav__main_buttons">
+          <div class="nav__main_buttons_3line">
+            <button id="toopen" onclick="open1()" type="button" name="button" class="openB">
+              <img id="white" src="https://img.icons8.com/ios-glyphs/35/000000/menu-rounded.png"/>
+            </button>
+            <div id="toopenDiv" class="openDivLogOut">
+              <button id="SignInB" type="button" name="button"><a href="vendor/logout.php">Log out</a></button>
+            </div>
+          </div>
+          <div class="nav__main_buttons_iconIn">
+            <!-- Место для иконки сотрудника -->
+            <img src="<?= $_SESSION['employees']['avatar'] ?>" alt="">
+
+            <img src="https://profile-images.xing.com/images/fcbbc1d50bc8aaa1d1f711a0428d92c2-1/sven-gessert.1024x1024.jpg" alt="">
+            <!-- <button id="SignInB" type="button" name="button"><a href="main1.html">Log out</a></button> -->
+          </div>
+        </div>
+      </div>
+      <div class="eventsList">
+        <div class="eventsList-text">
+          List of events
+        </div>
+
+      </div>
+      <div class="main__event_form">
+         <form class="event__adding" action="vendor/create.php" method="post">
+           <p>Order Date</p>
+           <input type="date" name="orderdate" value="2022-04-14">
+           <p>Customer surname</p>
+           <input type="text" name="custsurname" value="">
+           <p>Customer name</p>
+           <input type="text" name="custname" value="">
+           <p>Customer email</p>
+           <input type="text" name="custemail" value="">
+           <p>Customer phone number</p>
+           <input type="text" name="custphonenum" value="">
+           <p>Customer's address</p>
+           <input type="text" name="custaddress" value="">
+           <p>City</p>
+           <input type="text" name="city" value="">
+           <p>Employee</p>
+           <p><select name="employee">
+               <option>Select from the list</option>
+               <option>Bauyrzhan Dias</option>
+               <option>Abylai Ayan</option>
+               <option>Tolegen Arailym</option>
+               <option>Doszhan Ernar</option>
+               <option>Madiev Erzhan</option>
+              </select></p>
+
+           <p>Execution</p>
+           <input type="text" name="execution" value="">
+           <p>Form of payment</p>
+           <input type="text" name="payment" value="">
+           <p>Cost</p>
+           <input type="number" name="cost" value=""><br>
+
+           <button type="submit" name="button">Add new order</button>
+         </form>
+       </div>
+
+
+       <div class="col-md-12 mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Orders</h3>
+                    </div>
+                    <!-- /.card-header -->
+
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Customer surname</th>
+                                    <th>Customer name</th>
+                                    <th>Order date</th>
+                                    <th>Form of payment</th>
+                                    <th>Employees</th>
+                                    <th>Execution</th>
+                                    <th>Cost</th>
+                                    <th>&#9998;</th>
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $orders = mysqli_query($mysqli, query: "SELECT * FROM `orders`");
+                            $orders = mysqli_fetch_all($orders);
+                            foreach ($orders as $orders) {
+                              ?>
+
+                                <tr>
+                                <td><?= $orders[0] ?></td>
+                                <td><?= $orders[2] ?></td>
+                                <td><?= $orders[3] ?></td>
+                                <td><?= $orders[1] ?></td>
+                                <td><?= $orders[4] ?></td>
+                                <td><?= $orders[5] ?></td>
+                                <td><?= $orders[6] ?></td>
+                                <td><?= $orders[7] ?> KZT</td>
+                                <td><button class=" btn btn-sm btn-success"><a href="update.php?id=<?= $orders[0] ?>">Update</a></button></td>
+                                <td><button class="btn btn-sm btn-danger"><a href="vendor/delete.php?id=<?= $orders[0] ?>">Delete</a></button></td>
+                                </tr>
+                              <?php
+                            }
+                             ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    <script src="https://kit.fontawesome.com/e080e84936.js" crossorigin="anonymous"></script>
+    <script src="javaScript/allEventsJS.js"></script>
+
+    <!-- jQuery -->
+<script src="admin-panel/funda-service/admin/assets/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="admin-panel/funda-service/admin/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="admin-panel/funda-service/admin/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="admin-panel/funda-service/admin/assets/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="admin-panel/funda-service/admin/assets/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="admin-panel/funda-service/admin/assets/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="admin-panel/funda-service/admin/assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="admin-panel/funda-service/admin/assets/plugins/moment/moment.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="admin-panel/funda-service/admin/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="admin-panel/funda-service/admin/assets/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="admin-panel/funda-service/admin/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="admin-panel/funda-service/admin/assets/dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="admin-panel/funda-service/admin/assets/dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="admin-panel/funda-service/admin/assets/dist/js/pages/dashboard.js"></script>
+
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="admin-panel/funda-service/admin/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+  </body>
+</html>
